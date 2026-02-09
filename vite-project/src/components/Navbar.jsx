@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import assets from '../assets/assets'
+import ThemeChangeBtn from './ThemeChangeBtn'
 
 const Navbar = ({ theme, settheme }) => {
 
@@ -27,10 +28,12 @@ const Navbar = ({ theme, settheme }) => {
                 <a href="#contact-us" onClick={()=>{setsidebaropen(false)}} className='sm-hover:border-b' >Contact-us</a>
             </div>
 
-            <div >
+            <div className='flex gap-2 sm:gap-4' >
 
                 <img src={theme === 'dark' ? assets.menu_icon_dark : assets.menu_icon}
                 onClick={()=>{setsidebaropen(true)}} className='w-8 sm:hidden' alt="" />
+
+                <ThemeChangeBtn theme={theme} settheme={settheme}/>
 
                 <a href="contact-us" className='text-sm max-sm:hidden flex 
                 items-center gap-2 bg-primary text-white px-6 py-2 rounded-full
