@@ -1,5 +1,7 @@
 import React from 'react'
 import assets from '../assets/assets'
+import Title from './Title'
+import Servicecard from './Servicecard'
 
 const Services = () => {
 
@@ -30,8 +32,21 @@ const Services = () => {
     ]
 
     return (
-        <div className='flex items-center text-center'>
-            <h2 className='font-semibold'>How can we help?</h2>
+        <div id='services' className='relative flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40
+         pt-30 text-gray-700 dark:text-white'>
+
+            <img src={assets.bgImage2} className='absolute -top-110 -left-70 
+             -z-1 dark:hidden' alt="" />
+
+            <Title title='How can we help?' desc='From strategy to 
+             execution,we craft digital solutions that move your business forward.'/>
+
+             <div className='flex flex-col md:grid grid-cols-2'>
+                {servicesdata.map((service,index)=>(
+                    <Servicecard key={index} service={service} index={index}/>
+                ))}
+             </div>
+
         </div>
     )
 }
