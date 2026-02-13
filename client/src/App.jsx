@@ -6,7 +6,8 @@ import Services from './components/Services'
 import Ourwork from './components/Ourwork'
 import Team from './components/Team'
 import Contactus from './components/Contactus'
-
+import {Toaster} from 'react-hot-toast'
+import Footer from './components/Footer'
 
 const App = () => {
   const [theme,settheme] = useState(localStorage.getItem('theme') ? 
@@ -14,12 +15,14 @@ const App = () => {
   return (
     <div  className='dark:bg-black relative'>
      <Navbar theme={theme} settheme={settheme}/>
+     <Toaster/>
      <Hero/>
      <Trustedby/>
      <Services/>
      <Ourwork/>
      <Team/>
      <Contactus/>
+     <Footer theme={theme}/>
     </div>
   )
 }
